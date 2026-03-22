@@ -12,7 +12,8 @@ router.post("/album" ,authMiddleware.authArtist , createAlbum)
 
 // localhost:3000/api/music/
 router.get("/", authMiddleware.authUser, getAllMusics) // user can only fetch all music
-router.get("/albums" , authMiddleware.authUser , getAllAlbums) // user can only fetch all music
-router.get("/albums/:albumId", authMiddleware.authUser, getAlbumById)
+router.get("/albums" , authMiddleware.authUser , getAllAlbums) // user can only fetch all albums
+
+router.get("/albums/:albumId" , authMiddleware.authUser , getAlbumById) // albums fetched based on Id
 
 module.exports = router;
